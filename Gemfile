@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+
+# Set up Mongoid to talk to MongoDB
 gem "mongoid", github: "mongoid/mongoid"
 
 # Use SCSS for stylesheets
