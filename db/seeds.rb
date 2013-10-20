@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+User.destroy_all
+
+users = User.create([
+	{name: 'Chris Spears', username: 'cspears', password: 'blah', number_reviews: 0}
+])
+
+Review.create([
+	{rating: 3.5, body: "A great place for all things horror!", user: users.first}
+])
