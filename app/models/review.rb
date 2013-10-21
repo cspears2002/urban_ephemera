@@ -4,6 +4,6 @@ class Review
   field :rating, type: Float
   field :body, type: String
 
-  belongs_to :user
+  belongs_to :user, :store
   
 end
