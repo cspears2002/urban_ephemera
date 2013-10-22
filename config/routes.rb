@@ -1,12 +1,13 @@
 UrbanEphemera::Application.routes.draw do
-  get "review" => "review#index"
-  get "review/:id" => "review#show"
+  get "reviews" => "reviews#index"
+  get "reviews/:id" => "reviews#show"
   
-  get "user" => "user#index"
-  get "user/:id" => "user#show"
+  get "users" => "users#index"
+  get "users/new" => "users#new"
+  get "users/:id" => "users#show"
 
-  get "store" => "store#index"
-  get "store/:id" => "store#show"
+  get "stores" => "stores#index"
+  get "stores/:id" => "stores#show"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

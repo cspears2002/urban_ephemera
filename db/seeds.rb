@@ -17,7 +17,7 @@ Store.destroy_all
 
 stores = Store.create([
 	{name: 'Dark Delicacies', 
-	 speciality: 'Horror', 
+	 specialty: 'Horror', 
 	 avg_rating: 0, 
 	 number_reviews: 0, 
 	 street: '3512 W Magnolia Blvd',
