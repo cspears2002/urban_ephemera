@@ -3,8 +3,8 @@ class Store
 
   field :name, type: String
   field :specialty, type: String
-  field :avg_rating, type: Float
-  field :number_reviews, type: Integer
+  field :avg_rating, type: Float, default: 0
+  field :number_reviews, type: Integer, default: 0
   field :street, type: String
   field :city, type: String
   field :state, type: String
