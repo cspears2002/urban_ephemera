@@ -1,4 +1,7 @@
 UrbanEphemera::Application.routes.draw do
+
+  root to: "users#index"
+
   get "reviews" => "reviews#index"
   get "reviews/new" => "reviews#new"
   get "reviews/:id" => "reviews#show"

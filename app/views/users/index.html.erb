@@ -1,8 +1,48 @@
-<h1>Users</h1>
 
-<% @users.each do |user| %>
-  <%= user.name %>
-  <%= user.username %>
-  <%= user.password %>
-  <%= user.number_reviews %>
-<% end %>
+<div id="super-container">
+  <select id="dropdown">
+    <option value="books">Books</option>
+    <option value="records">Records</option>
+    <option value="all">All</option>
+  </select>
+
+  <div id="login-button">
+    <form class="form-horizontal" role="form">
+      <div id="text-field-container">
+        <div class="form-group">
+          <div class="col-lg-10">
+            <input type="username" class="form-control" id="inputEmail1" placeholder="Username">
+          </div>
+        </div>
+      </div>
+      <div id="text-field-container">
+        <div class="form-group">
+          <div class="col-lg-10">
+            <input type="password" class="form-control" id="inputPassword1" placeholder="Password">
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-lg-offset-2 col-lg-10">
+          <button type="submit" class="btn btn-default">Sign in</button>
+        </div>
+      </div>
+  </form>
+  <div>
+
+  <div id="loc-rev">
+    <div id="loc-rev-input">
+
+      <div id="location">
+        <input type="text" name="location" value="Location" class="text-field">
+        <input type="submit" value="Submit" class="buttons">
+      </div>
+
+      <div id="review">
+        <button type="button" class="btn btn-default btn-lg btn-block">Submit Review</button>
+      </div>
+
+  </div>
+</div>
+
+<script src="scripts/scripts.js"></script>
