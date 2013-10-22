@@ -1,0 +1,17 @@
+<%= form_for @review do |r| %>
+
+<p>
+	<%= r.label :rating, "Rating" %>
+	<%= r.text_field :rating %>
+</p>
+
+<p>
+	<%= r.label :body, "Body" %>
+	<%= r.text_field :body %>
+</p>
+
+<p>
+	<%= r.submit %>
+</p>
+
+<% end %>
