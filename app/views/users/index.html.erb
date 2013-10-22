@@ -6,7 +6,7 @@
     <option value="all">All</option>
   </select>
 
-  <div id="login-button">
+  <div id="controls">
     <form class="form-horizontal" role="form">
       <div id="text-field-container">
         <div class="form-group">
@@ -30,18 +30,19 @@
   </form>
   <div>
 
-  <div id="loc-rev">
-    <div id="loc-rev-input">
-
-      <div id="location">
-        <input type="text" name="location" value="Location" class="text-field">
-        <input type="submit" value="Submit" class="buttons">
+  <form class="form-inline" role="form">
+    <div id="location-container">
+      <div id="text-field-container">
+        <div class="form-group">
+            <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Location">
+        </div>
       </div>
-
-      <div id="review">
-        <button type="button" class="btn btn-default btn-lg btn-block">Submit Review</button>
+      <button type="submit" class="btn btn-default">Submit</button>
       </div>
+  </form>
 
+  <div id="block-button">
+    <button type="button" class="btn btn-default btn-lg btn-block">Submit Review</button>
   </div>
 </div>
 
