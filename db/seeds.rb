@@ -13,6 +13,24 @@ users = User.create([
 	{name: 'Chris Spears', username: 'cspears', password: 'blah', number_reviews: 0}
 ])
 
+Store.destroy_all
+
+stores = Store.create([
+	{name: 'Dark Delicacies', 
+	 speciality: 'Horror', 
+	 avg_rating: 0, 
+	 number_reviews: 0, 
+	 street: '3512 W Magnolia Blvd',
+	 city: 'Burbank',
+	 state: 'CA',
+	 zip: 91505,
+	 phone_number: 8185566660,
+	 email: 'darkdel@darkdel.com',
+	 website: 'http://www.darkdel.com/'}
+])
+
+Review.destroy_all
+
 Review.create([
-	{rating: 3.5, body: "A great place for all things horror!", user: users.first}
+	{rating: 3.5, body: "A great place for all things horror!", user: users.first, store: stores.first}
 ])

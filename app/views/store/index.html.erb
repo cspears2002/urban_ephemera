@@ -1,0 +1,15 @@
+<h1>Stores</h1>
+
+<% @stores.each do |store| %>
+  <%= store.name %>
+  <%= store.specialty %>
+  <%= store.avg_rating %>
+  <%= store.number_reviews %>
+  <%= store.street %>
+  <%= store.city %>
+  <%= store.state %>
+  <%= store.zip %>
+  <%= store.phone_number %>
+  <%= store.email %>
+  <%= store.website %>
+<% end %>
