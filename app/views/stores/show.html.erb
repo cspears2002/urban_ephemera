@@ -1,13 +1,27 @@
-<h1>Store#show</h1>
+<div id="super-container-store">
 
-<%= @store.name %>
-<%= @store.specialty %>
-<%= @store.avg_rating %>
-<%= @store.number_reviews %>
-<%= @store.street %>
-<%= @store.city %>
-<%= @store.state %>
-<%= @store.zip %>
-<%= @store.phone_number %>
-<%= @store.email %>
-<%= @store.website %>
+  <div class="pull-right">
+    <div id="thumbnail">
+      <!-- <img src="../../assets/images/placeholder_icon.png" class="img-thumbnail"> -->
+      <img src="/assets/placeholder_icon.png" class="img-thumbnail"> 
+    </div>
+  </div>
+
+  <h1><%= @store.name %></h1>
+  <label>Speciality: </label><span id="speciality"><%= @store.specialty %></span>
+  <label>Rating: </label> <%= @store.avg_rating %><%= @store.number_reviews %>
+
+  <div id = "address">
+    <%= @store.street %>
+    <%= @store.city %>
+    <%= @store.state %>
+    <%= @store.zip %>
+  </div>
+
+  <div id="contact-info">
+    <%= @store.phone_number %>
+    <%= @store.email %>
+    <%= @store.website %>
+  </div>
+
+</div>

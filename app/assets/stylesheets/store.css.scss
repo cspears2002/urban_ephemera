@@ -10,20 +10,14 @@
   visibility: hidden;
 }
 
-#dropdown {
-  opacity: 0.8;
-  border: none;
-  margin: 10px;
-}
-
 body,html {
   height: 100%;
 }
 
 /*Set up background image*/
 
-#super-container {
-  background-image: url('IMG_0003.png');
+#super-container-store {
+  background-image: url('IMG_0005.png');
   background-repeat: no-repeat;
   background-position: center;
   height: 640px;
@@ -32,22 +26,4 @@ body,html {
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
-}
-
-#controls {
-  margin-left: 10px;
-}
-
-#text-field-container {
-  margin-bottom: 10px;
-}
-
-#location-container {
-  margin-top: 20px;
-}
-
-#block-button {
-  margin-top: 20px;
-	margin-right: auto;
-  margin-left: auto;
 }
