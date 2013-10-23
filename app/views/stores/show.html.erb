@@ -5,20 +5,34 @@
   </div>
 
   <h1><%= @store.name %></h1>
-  <label>Speciality: </label><span id="speciality"><%= @store.specialty %></span>
-  <label>Rating: </label> <%= @store.avg_rating %><%= @store.number_reviews %>
+
+  <div id = "specialty">
+    <label>Speciality: </label><%= @store.specialty %>
+  </div>
+  <div id = "rating">
+    <label>Rating: </label> <%= @store.avg_rating %> (<%= @store.number_reviews %> ratings)
+  </div>
+  <br />
+
 
   <div id = "address">
-    <%= @store.street %>
-    <%= @store.city %>
-    <%= @store.state %>
-    <%= @store.zip %>
+    <div id = "street">
+      <%= @store.street %>
+    </div>
+    <div id = "city-state-zip">
+      <%= @store.city %>, <%= @store.state %> <%= @store.zip %>
+    </div>
   </div>
-
   <div id="contact-info">
-    <%= @store.phone_number %>
-    <%= @store.email %>
-    <%= @store.website %>
+    <div id = "phone">
+      <%= @store.phone_number %>
+    </div>
+    <div id = "email">
+      <%= @store.email %>
+    </div>
+    <div id = "website">
+      <%= @store.website %>
+    </div>
   </div>
 
 </div>
