@@ -6,6 +6,9 @@ gem 'rails', '4.0.0'
 # Set up Mongoid to talk to MongoDB
 gem "mongoid", github: "mongoid/mongoid"
 
+# Storing a secure hash of users passwords
+gem 'bcrypt-ruby', github: 'codahale/bcrypt-ruby'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

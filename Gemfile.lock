@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/codahale/bcrypt-ruby.git
+  revision: df09e4c73f2f3d9a134b2abf536ca5f159f33075
+  specs:
+    bcrypt-ruby (3.1.2)
+
+GIT
   remote: git://github.com/mongoid/mongoid.git
   revision: e3539830c2c00eea134951eb3cd9eef669ddef99
   specs:
@@ -130,6 +136,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby!
   bootstrap-sass!
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
