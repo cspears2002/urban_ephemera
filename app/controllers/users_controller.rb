@@ -13,7 +13,8 @@ class UsersController < ApplicationController
   end
 
   def create
-  	@user = User.create(params[:user].permit(:name, :username, :password))
+  	@user = User.create(params[:user]
+                .permit(:username, :password, :password_confirmation))
   	redirect_to :action => "show", :id => @user._id
   end
 

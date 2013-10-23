@@ -1,23 +1,18 @@
 <%= form_for @user do |u| %>
 
 <p>
-	<%= u.label :name, "Name" %>
-	<%= u.text_field :name %>
-</p>
-
-<p>
-	<%= u.label :username, "username" %>
+	<%= u.label :username, "Username" %>
 	<%= u.text_field :username %>
 </p>
 
 <p>
-	<%= u.label :password, "password" %>
+	<%= u.label :password, "Password" %>
 	<%= u.text_field :password %>
 </p>
 
 <p>
-	<%= u.label :number_reviews, "Number of reviews" %>
-	<%= u.text_field :number_reviews %>
+	<%= u.label :password_confirmation, "Confirm Password" %>
+	<%= u.text_field :password_confirmation %>
 </p>
 
 <p>
