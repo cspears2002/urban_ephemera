@@ -1,0 +1,19 @@
+<%= form_for @user, {url:"/authentications", method:"post"} do |u| %>
+
+  <p>
+  	<%= u.label :username, "Username" %>
+  	<%= u.text_field :username %>
+  </p>
+
+  <p>
+  	<%= u.label :password, "Password" %>
+  	<%= u.text_field :password %>
+  </p>
+
+  <p>
+  	<%= u.submit %>
+  </p>
+
+<% end %>
+
+User id: <%= session[:user_id] %>
