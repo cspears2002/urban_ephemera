@@ -7,15 +7,15 @@ class AuthenticationsController < ApplicationController
       redirect_to users_url
     else
       @user = User.new
-      render :new
+      # render :new
     end
   end
 
  def create
-    user = User.find_by(username: params[:username][:password])
+    user = User.where(username: params[:user][:username]).first
     if user
         # authenticate user
-        if user.authenticate(params[:username][:password])
+        if user.authenticate(params[:user][:password])
           session[:user_id] = user.id
           redirect_to users_url
         else
