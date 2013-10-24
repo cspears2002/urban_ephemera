@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    redirect_to authentications_url unless @current_user
+    redirect_to authentications_url unless current_user
   end
 
 end
