@@ -8,13 +8,12 @@ class AuthenticationsController < ApplicationController
       redirect_to users_url
     else
       @user = User.new
-      # render :new
+      render :new
     end
   end
 
  def create
-    # user = User.where(username: params[:user][:username]).first
-    user = User.first
+    user = User.where(username: params[:user][:username]).first
 
     if user
         # authenticate user
