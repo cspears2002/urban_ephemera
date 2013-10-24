@@ -24,6 +24,9 @@ UrbanEphemera::Application.routes.draw do
   
   delete "authentications/:id" => "authentications#destroy"
 
+  # post 'authentications' => 'authentications#logout'
+  # <%= button_to "Logout", logout_path %> post method
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
