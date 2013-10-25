@@ -20,7 +20,7 @@
   </form>
 
   <div id="block-button">
-    <button type="button" class="btn btn-default btn-lg btn-block">Submit Review</button>
+    <%= button_to "Submit Review", "/stores/new", method: :get %>
   </div>
   <p>
     <%= button_to "Log out", "/authentications/_", method: :delete %>

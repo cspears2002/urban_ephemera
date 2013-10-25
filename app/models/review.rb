@@ -5,6 +5,6 @@ class Review
   field :body, type: String
 
   belongs_to :user
-  belongs_to :store
+  embedded_in :store
   
 end

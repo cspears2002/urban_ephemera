@@ -11,7 +11,7 @@ UrbanEphemera::Application.routes.draw do
   get "users/:id" => "users#show"
 
   get "stores" => "stores#index"
-  get "stores" => "stores#new"
+  get "stores/new" => "stores#new"
   get "stores/:id" => "stores#show"
 
   get "authentications" => "authentications#index"
