@@ -23,7 +23,7 @@ body,html {
 /*Set up background image*/
 
 #super-container {
-  background-image: url('IMG_0003.png');
+  background-image: url(image-path('IMG_0003.png'));
   background-repeat: no-repeat;
   background-position: center;
   height: 640px;
