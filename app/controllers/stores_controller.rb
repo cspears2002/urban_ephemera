@@ -14,7 +14,7 @@ class StoresController < ApplicationController
 
 
   def create
-  	@user = Store.create(params[:store]
+  	@store = Store.create(params[:store]
   				.permit(:name, 
                 		:specialty, 
                 		:street, 
@@ -24,6 +24,6 @@ class StoresController < ApplicationController
                 		:phone_number, 
                 		:email, 
                 		:website))
-  	redirect_to stores_url
+  	redirect_to :action => "show", :id => @store._id
   end
 end

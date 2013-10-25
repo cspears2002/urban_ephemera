@@ -17,15 +17,19 @@ body,html {
 /*Set up background image*/
 
 #super-container-store {
-  background-image: url(img-path('IMG_0005.png'));
+  background-image: url(image-path('IMG_0005.png'));
   background-repeat: no-repeat;
   background-position: center;
   height: 640px;
   width: 480px;
-  margin: 5px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 5px;
+}
+
+#info-block {
+  margin: 5px;
+  padding: 2.5px;
 }
 
 .img-thumbnail {
@@ -35,4 +39,6 @@ body,html {
 
 .pull-right {
   float: right !important;
+  margin-top: 5px;
+  margin-right: 5px;
 }
