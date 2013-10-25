@@ -14,6 +14,6 @@ class Store
   field :website, type: String
 
   # has_many :reviews, autosave: true
-  embeds_many :reviews
+  has_many :reviews
 
 end

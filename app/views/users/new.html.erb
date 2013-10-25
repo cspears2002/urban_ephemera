@@ -1,26 +1,45 @@
-<h1>Make a new user</h1>
-
 <%= form_for @user do |u| %>
-
-<p>
-	<%= u.label :username, "Username" %>
-	<%= u.text_field :username %>
-</p>
-
-<p>
-	<%= u.label :password, "Password" %>
-	<%= u.text_field :password %>
-</p>
-
-<p>
-	<%= u.label :password_confirmation, "Confirm Password" %>
-	<%= u.text_field :password_confirmation %>
-</p>
-
-<p>
-	<%= u.submit %>
-</p>
-
+  <div id="super-container">
+    <div id="controls">
+      <form class="form-horizontal" role="form">
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= u.label :username, "Username" %>
+                <%= u.text_field :username %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= u.label :password, "Password" %>
+                <%= u.text_field :password %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= u.label :password_confirmation, "Confirm Password" %>
+                <%= u.text_field :password_confirmation %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <p>
+              <%= u.submit %>
+            </p>
+          </div>
+        </div>
+    </form>
+    <div>
+  <div>
 <% end %>
-
-User id: <%= session[:user_id] %>

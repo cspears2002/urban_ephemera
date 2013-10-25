@@ -23,7 +23,6 @@ class AuthenticationsController < ApplicationController
         else
           flash.now.alert = "Unable to sign you in. Please try again."
           redirect_to users_new_url
-          render :new
         end
     else
       redirect_to users_new_url(username: params[:user][:username])
