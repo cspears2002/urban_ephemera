@@ -9,13 +9,13 @@ class UsersController < ApplicationController
   end
 
   def new
-  	@user = User.new
+  	@user = User.new(username: params[:username])
   end
 
   def create
   	@user = User.create(params[:user]
                 .permit(:username, :password, :password_confirmation))
-  	redirect_to :action => "show", :id => @user._id
+  	redirect_to authentications_new_url(username: params[:user][:username])
   end
 
 end

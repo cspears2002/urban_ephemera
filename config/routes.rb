@@ -1,6 +1,6 @@
 UrbanEphemera::Application.routes.draw do
 
-  root to: "users#index"
+  root to: "authentications#new"
 
   get "reviews" => "reviews#index"
   get "reviews/new" => "reviews#new"

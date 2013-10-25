@@ -7,7 +7,7 @@ class AuthenticationsController < ApplicationController
     if current_user
       redirect_to users_url
     else
-      @user = User.new
+      @user = User.new(username: params[:username])
       render :new
     end
   end
@@ -26,7 +26,7 @@ class AuthenticationsController < ApplicationController
           render :new
         end
     else
-      redirect_to users_new_url
+      redirect_to users_new_url(username: params[:user][:username])
     end
   end
 
