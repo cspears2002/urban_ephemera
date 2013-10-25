@@ -10,16 +10,14 @@
 User.destroy_all
 
 users = User.create([
-	{name: 'Chris Spears', username: 'cspears', password: 'blah', number_reviews: 0}
+	{username: 'cspears'}
 ])
 
 Store.destroy_all
 
 stores = Store.create([
 	{name: 'Dark Delicacies', 
-	 specialty: 'Horror', 
-	 avg_rating: 0, 
-	 number_reviews: 0, 
+	 specialty: 'Horror',  
 	 street: '3512 W Magnolia Blvd',
 	 city: 'Burbank',
 	 state: 'CA',
