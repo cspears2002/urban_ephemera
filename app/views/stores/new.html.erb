@@ -1,54 +1,107 @@
 <%= form_for @store do |s| %>
-
-<p>
-  <%= s.label :name, "Name" %>
-  <%= s.text_field :name %>
-</p>
-
-<p>
-  <%= s.label :specialty, "Specialty" %>
-  <%= s.text_field :specialty %>
-</p>
-
-<p>
-  <%= s.label :street, "Street" %>
-  <%= s.text_field :street %>
-</p>
-
-<p>
-  <%= s.label :city, "City" %>
-  <%= s.text_field :city %>
-</p>
-
-<p>
-  <%= s.label :state, "State" %>
-  <%= s.text_field :state %>
-</p>
-
-<p>
-  <%= s.label :zip, "Zip" %>
-  <%= s.text_field :zip %>
-</p>
-
-<p>
-  <%= s.label :phone_number, "Phone" %>
-  <%= s.text_field :phone_number%>
-</p>
-
-<p>
-  <%= s.label :email, "Email" %>
-  <%= s.text_field :email%>
-</p>
-
-<p>
-  <%= s.label :website, "Website" %>
-  <%= s.text_field :website%>
-</p>
-
-<p>
-  <%= s.submit %>
-</p>
-
+ <div id="super-container-store">
+    <div id="controls">
+      <form class="form-horizontal" role="form">
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :name, "Name" %>
+                <%= s.text_field :name %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :specialty, "Specialty" %>
+                <%= s.text_field :specialty %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :street, "Street" %>
+                <%= s.text_field :street %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :city, "City" %>
+                <%= s.text_field :city %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :state, "State" %>
+                <%= s.text_field :state %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :zip, "Zip" %>
+                <%= s.text_field :zip %>
+              </p>
+            </div>
+          </div>
+        </div>
+         <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :phone_number, "Phone" %>
+                <%= s.text_field :phone_number %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :email, "Email" %>
+                <%= s.text_field :email %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="text-field-container">
+          <div class="form-group">
+            <div class="col-lg-10">
+              <p>
+                <%= s.label :website, "Website" %>
+                <%= s.text_field :website %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-lg-offset-2 col-lg-10">
+            <p>
+              <%= s.submit %>
+            </p>
+          </div>
+        </div>
+    </form>
+    <div>
+  <div>
 <% end %>
 
 User id: <%= session[:user_id] %>

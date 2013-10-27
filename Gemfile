@@ -44,7 +44,7 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 group :production do
-	gem 'rails_12factor'
+  gem 'rails_12factor'
   gem 'thin'
 end
 

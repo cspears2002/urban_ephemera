@@ -1,7 +1,5 @@
 <div id="super-container-store">
 
-  
-
   <div id = "info-block">
     <!-- Thumbnail image -->
     <div class="pull-right">
@@ -37,6 +35,9 @@
       <div id = "website">
         <%= @store.website %>
       </div>
+    </div>
+    <div id="block-button">
+      <%= button_to "Write Review", "/reviews/new", method: :get %>
     </div>
   </div>
 
