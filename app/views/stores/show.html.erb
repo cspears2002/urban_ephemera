@@ -37,7 +37,7 @@
       </div>
     </div>
     <div id="block-button">
-      <%= button_to "Write Review", "/reviews/new", method: :get %>
+      <%= button_to "Write Review", reviews_new_url(user_id: session[:user_id]), method: :get %>
     </div>
   </div>
 

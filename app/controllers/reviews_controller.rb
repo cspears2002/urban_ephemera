@@ -12,7 +12,8 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  	@review = Review.create(params[:review].permit(:rating, :body))
+    @review = Review.create(params[:review].permit(:rating, :body, :user, :store))
+
   	redirect_to :action => "show", :id => @review._id
   end
 

@@ -9,9 +9,9 @@
 
 User.destroy_all
 
-users = User.create([
+ users = User.create([
 	{username: 'cspears'}
-])
+ ])
 
 Store.destroy_all
 
