@@ -1,36 +1,21 @@
 UrbanEphemera::Application.routes.draw do
 
   root to: "authentications#new"
-
-  # get "reviews" => "reviews#index"
-  # get "reviews/new" => "reviews#new"
-  # get "reviews/:id" => "reviews#show"
   
   get "users" => "users#index"
   get "users/new" => "users#new"
   get "users/:id" => "users#show"
 
-  # get "stores" => "stores#index"
-  # get "stores/new" => "stores#new"
-  # get "stores/:id" => "stores#show"
-
   get "authentications" => "authentications#index"
   get "authentications/new" => "authentications#new"
 
   post "authentications" => "authentications#create"
-  # post "users" => "users#create"
-  # post "reviews" => "reviews#create"
-  # post "stores" => "stores#create"
   
   delete "authentications/:id" => "authentications#destroy"
 
   resources :stores do
-    resources :reviews do
-      end
+    resources :reviews
   end
-
-  # post 'authentications' => 'authentications#logout'
-  # <%= button_to "Logout", logout_path %> post method
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
