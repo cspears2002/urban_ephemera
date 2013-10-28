@@ -9,12 +9,17 @@ class ReviewsController < ApplicationController
 
   def new
   	@review = Review.new
+    @store = Store.find(params[:store_id])
   end
 
   def create
-    @review = Review.create(params[:review].permit(:rating, :body, :user, :store))
 
-  	redirect_to :action => "show", :id => @review._id
+    @review = Review.new(params[:review].permit(:rating, :body))
+    @review.user = current_user
+    @review.store = Store.find(params[:store_id])
+    @review.save
+
+   	redirect_to :action => "show", :id => @review._id
   end
 
 end
