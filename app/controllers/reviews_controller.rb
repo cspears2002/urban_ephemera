@@ -19,6 +19,8 @@ class ReviewsController < ApplicationController
     @review.store = Store.find(params[:store_id])
     @review.save
 
+    # Set the number of reviews a user has
+    current_user.number_reviews = current_user.reviews.count
    	redirect_to :action => "show", :id => @review._id
   end
 
