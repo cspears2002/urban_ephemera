@@ -29,7 +29,7 @@
             position: results[0].geometry.location
         });
         var infowindow = new google.maps.InfoWindow({
-          content:"I am here!"
+          content:"<%=current_user.username%> is here!"
         });
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.open(map,marker);
