@@ -1,20 +1,46 @@
-<h1>This is a map page.</h1>
-
 <!-- Map script -->
 <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtDgj_w8lRj-Hgg0z0mUVcfRPwlnNcJU0&sensor=false">
 </script>
 <script type="text/javascript">
+  var geocoder;
+  var map;
+
+  // Creates map
   function initialize() {
+    geocoder = new google.maps.Geocoder();
+    var latlng = new google.maps.LatLng(-34.397, 150.644);
     var mapOptions = {
-      center: new google.maps.LatLng(-34.397, 150.644),
       zoom: 8,
+      center: latlng,
       mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+    }
+    map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
   }
-    google.maps.event.addDomListener(window, 'load', initialize);
+
+  // The geocoder
+  function codeAddress() {
+    var address = "<%=params[:location]%>";
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
+
+  google.maps.event.addDomListener(window, 'load', initialize);
+
 </script>
+
+<%=params[:location]%>
+<input type="button" value="Encode" onclick="codeAddress()">
 
 <!-- Holds map -->
 <div id="map-canvas"/>
+
