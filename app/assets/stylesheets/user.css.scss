@@ -20,7 +20,7 @@ body,html {
   height: 100%;
 }
 
-/*Set up background image*/
+/* Set up background image */
 
 #super-container {
   background-image: url(image-path('IMG_0003.png'));
@@ -51,4 +51,9 @@ body,html {
   margin-top: 20px;
 	margin-right: auto;
   margin-left: auto;
+}
+
+/* Holds map */
+#map-canvas { 
+  height: 100% 
 }
