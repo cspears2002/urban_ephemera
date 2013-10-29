@@ -6,14 +6,14 @@
     <option value="all">All</option>
   </select>
 
-  <form class="form-inline" role="form">
+  <form class="form-inline" role="form" action="../stores/map" method="get">
     <div id="location-container">
       <div id="text-field-container">
         <div class="form-group">
           <p>
            <input type="text" name="location" placeholder="Location">
            <!-- <button type="submit" class="btn btn-default">Submit</button> -->
-           <%= button_to "Submit", stores_map_url, method: :post %>
+           <%= button_to "Submit", stores_map_url, method: :get %>
           </p>
         </div>
       </div>

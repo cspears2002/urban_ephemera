@@ -10,7 +10,7 @@ UrbanEphemera::Application.routes.draw do
   get "authentications/new" => "authentications#new"
 
   # Custom route for the map page
-  post "stores/map" => "stores#map"
+  get "stores/map" => "stores#map"
 
   post "authentications" => "authentications#create"
   
