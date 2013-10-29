@@ -9,6 +9,9 @@ UrbanEphemera::Application.routes.draw do
   get "authentications" => "authentications#index"
   get "authentications/new" => "authentications#new"
 
+  # Custom route for the map page
+  post "stores/map" => "stores#map"
+
   post "authentications" => "authentications#create"
   
   delete "authentications/:id" => "authentications#destroy"

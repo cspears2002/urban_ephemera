@@ -12,7 +12,8 @@
         <div class="form-group">
           <p>
            <input type="text" name="location" placeholder="Location">
-           <button type="submit" class="btn btn-default">Submit</button>
+           <!-- <button type="submit" class="btn btn-default">Submit</button> -->
+           <%= button_to "Submit", stores_map_url, method: :post %>
           </p>
         </div>
       </div>
@@ -20,7 +21,7 @@
   </form>
 
   <div id="block-button">
-    <%= button_to "Add Store", "/stores/new", method: :get %>
+    <%= button_to "Add Store", new_store_url, method: :get %>
   </div>
   <p>
     <%= button_to "Log out", "/authentications/_", method: :delete %>
