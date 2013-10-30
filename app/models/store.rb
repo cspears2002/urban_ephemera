@@ -13,7 +13,8 @@ class Store
   field :email, type: String
   field :website, type: String
 
-  # has_many :reviews, autosave: true
   has_many :reviews
 
+  # check if the name is unique
+  validates :name, uniqueness: true, :case_sensitive => false
 end

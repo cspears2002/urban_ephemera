@@ -9,6 +9,7 @@
   // Creates map
   function initialize() {
     geocoder = new google.maps.Geocoder();
+    var address = "<%=params[:location]%>"
     var latlng = new google.maps.LatLng(-34.397, 150.644);
     var mapOptions = {
       zoom: 8,
@@ -48,4 +49,4 @@
 <input type="button" value="Encode" onclick="codeAddress()">
 
 <!-- Holds map -->
-<div id="map-canvas"/>
+<div id="map-canvas"></div>

@@ -15,7 +15,7 @@ class StoresController < ApplicationController
 
   def create
   	@store = Store.create(params[:store]
-  				.permit(:name, 
+  				  .permit(:name, 
                 		:specialty, 
                 		:street, 
                 		:city, 
