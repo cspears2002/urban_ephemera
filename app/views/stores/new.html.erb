@@ -6,8 +6,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :name, "Name" %>
-                <%= s.text_field :name %>
+                <%= s.text_field :name, placeholder: "name" %>
               </p>
             </div>
           </div>
@@ -16,8 +15,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :specialty, "Specialty" %>
-                <%= s.text_field :specialty %>
+                <%= s.text_field :specialty, placeholder: "specialty" %>
               </p>
             </div>
           </div>
@@ -26,8 +24,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :street, "Street" %>
-                <%= s.text_field :street %>
+                <%= s.text_field :street, placeholder: "street" %>
               </p>
             </div>
           </div>
@@ -36,8 +33,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :city, "City" %>
-                <%= s.text_field :city %>
+                <%= s.text_field :city, placeholder: "city" %>
               </p>
             </div>
           </div>
@@ -46,8 +42,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :state, "State" %>
-                <%= s.text_field :state %>
+                <%= s.text_field :state, placeholder: "state" %>
               </p>
             </div>
           </div>
@@ -56,8 +51,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :zip, "Zip" %>
-                <%= s.text_field :zip %>
+                <%= s.text_field :zip, placeholder: "zip" %>
               </p>
             </div>
           </div>
@@ -66,8 +60,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :phone_number, "Phone" %>
-                <%= s.text_field :phone_number %>
+                <%= s.text_field :phone_number, placeholder: "phone" %>
               </p>
             </div>
           </div>
@@ -76,8 +69,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :email, "Email" %>
-                <%= s.text_field :email %>
+                <%= s.text_field :email, placeholder: "email" %>
               </p>
             </div>
           </div>
@@ -86,8 +78,7 @@
           <div class="form-group">
             <div class="col-lg-10">
               <p>
-                <%= s.label :website, "Website" %>
-                <%= s.text_field :website %>
+                <%= s.text_field :website, placeholder: "website" %>
               </p>
             </div>
           </div>
@@ -103,5 +94,3 @@
     <div>
   <div>
 <% end %>
-
-User id: <%= session[:user_id] %>

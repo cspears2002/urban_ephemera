@@ -1,13 +1,11 @@
 <%= form_for [@store, @review] do |r| %>
 
 <p>
-	<%= r.label :rating, "Rating" %>
-	<%= r.text_field :rating,placeholder: 'placeholder' %>
+	<%= r.text_field :rating, placeholder: 'rating' %>
 </p>
 
 <p>
-	<%= r.label :body, "Body" %>
-	<%= r.text_field :body %>
+	<%= r.text_field :body, placeholder: 'body' %>
 </p>
 
 <p>
@@ -16,4 +14,3 @@
 
 <% end %>
 
-User id: <%= session[:user_id] %>

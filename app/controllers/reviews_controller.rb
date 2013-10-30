@@ -52,7 +52,7 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
 
     # Try to update review
-    if @review.update_attributes(params[:review].permit(:rating, :body))
+    if @review.update_attributes!(params[:review].permit(:rating, :body))
       
       # Update the average rating for a store
       store = Store.find(params[:store_id])
