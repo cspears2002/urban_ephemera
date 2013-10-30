@@ -43,7 +43,7 @@ class ReviewsController < ApplicationController
 
   def update
     # Grab user's review
-    @review = Review.find_by(user: current_user, store: Store.find(params[:store_id]))
+    @review = Review.find(params[:id])
     @review.update(rating: params[:rating].to_f, body: params[:body])
       
     # Update the average rating for a store
@@ -54,6 +54,7 @@ class ReviewsController < ApplicationController
       rating_sum = rating_sum + review.rating
     end
     store.update(avg_rating: rating_sum/store.reviews.count)
+    
     redirect_to :action => "show", :id => @review._id
   end
 
