@@ -1,21 +1,4 @@
-<h1>Let's edit this!</h1>
+<h1>Edit did not work!</h1>
 
-<%= form_for [@store, @review] do |r| %>
-
-<p>
-	<%= r.label :rating, "Rating" %>
-	<%= r.text_field :rating %>
-</p>
-
-<p>
-	<%= r.label :body, "Body" %>
-	<%= r.text_field :body %>
-</p>
-
-<p>
-	<%= r.submit %>
-</p>
-
-<% end %>
 
 User id: <%= session[:user_id] %>

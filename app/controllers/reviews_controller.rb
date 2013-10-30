@@ -50,18 +50,23 @@ class ReviewsController < ApplicationController
   def update
     # Grab user's review
     @review = Review.find(params[:id])
-    @review.update(rating: params[:rating], body: params[:body])
+
+    # Try to update review
+    if @review.update_attributes(params[:review].permit(:rating, :body))
       
-    # Update the average rating for a store
-    store = Store.find(params[:store_id])
-    review_array = store.reviews.to_a
-    rating_sum = 0
-    review_array.each do |review|
-      rating_sum = rating_sum + review.rating
-    end
-    store.update(avg_rating: rating_sum/store.reviews.count)
+      # Update the average rating for a store
+      store = Store.find(params[:store_id])
+      review_array = store.reviews.to_a
+      rating_sum = 0
+      review_array.each do |review|
+        rating_sum = rating_sum + review.rating
+      end
+      store.update(avg_rating: rating_sum/store.reviews.count)
     
-    redirect_to :action => "show", :id => @review._id
+      redirect_to :action => "show", :id => @review._id
+    else
+      render 'edit'
+    end
   end
 
 end
