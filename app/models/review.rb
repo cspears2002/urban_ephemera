@@ -6,5 +6,7 @@ class Review
 
   belongs_to :user
   belongs_to :store
+
+  validates :user, uniqueness: true
   
 end
