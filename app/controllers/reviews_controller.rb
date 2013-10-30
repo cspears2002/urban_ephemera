@@ -14,10 +14,16 @@ class ReviewsController < ApplicationController
 
   def create
 
-    @review = Review.new(params[:review].permit(:rating, :body))
-    @review.user = current_user
-    @review.store = Store.find(params[:store_id])
-    if @review.save
+    # check to see if review already exists
+    unless Review.find_by(user: current_user, store: Store.find(params[:store_id]))
+
+      # Make a new review if it doesn't
+      @review = Review.new(params[:review].permit(:rating, :body))
+      @review.user = current_user
+      @review.store = Store.find(params[:store_id])
+
+      # Save review
+      @review.save
 
       # Set the number of reviews a user has
       current_user.update(number_reviews: current_user.reviews.count)
