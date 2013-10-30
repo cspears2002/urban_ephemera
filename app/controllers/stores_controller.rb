@@ -27,8 +27,7 @@ class StoresController < ApplicationController
     if @store.save
   	  redirect_to :action => "show", :id => @store._id
     else
-      # Need to grab the store that already exists
-      redirect_to :action => "show", :id => @store.name
+      redirect_to :action => "show", :id => Store.find_by(params[:name])
     end
   end
 end
