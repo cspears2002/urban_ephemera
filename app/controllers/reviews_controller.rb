@@ -37,14 +37,20 @@ class ReviewsController < ApplicationController
    	  redirect_to :action => "show", :id => @review._id
     else
 
-      redirect_to :action => "update", :id => @review._id
+      # redirect_to edit_store_review(@review._id)
+      @review = Review.find_by(user: current_user)
+      redirect_to :action => "edit", :id => @review._id
     end
+  end
+
+  def edit
+    @review = Review.find(params[:id])
   end
 
   def update
     # Grab user's review
     @review = Review.find(params[:id])
-    @review.update(rating: params[:rating].to_f, body: params[:body])
+    @review.update(rating: params[:rating], body: params[:body])
       
     # Update the average rating for a store
     store = Store.find(params[:store_id])
