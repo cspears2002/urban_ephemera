@@ -37,7 +37,7 @@ class ReviewsController < ApplicationController
    	  redirect_to :action => "show", :id => @review._id
     else
 
-      # redirect_to edit_store_review(@review._id)
+      # redirect to the edit route
       @review = Review.find_by(user: current_user)
       redirect_to :action => "edit", :id => @review._id
     end
