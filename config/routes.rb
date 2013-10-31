@@ -13,7 +13,8 @@ UrbanEphemera::Application.routes.draw do
   get "stores/map" => "stores#map"
 
   post "authentications" => "authentications#create"
-  
+  post "users" => "users#create"
+
   delete "authentications/:id" => "authentications#destroy"
 
   resources :stores do

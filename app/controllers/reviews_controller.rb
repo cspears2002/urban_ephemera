@@ -14,20 +14,13 @@ class ReviewsController < ApplicationController
 
   def create
 
+    @review = Review.new(params[:review].permit(:rating, :body))
+    @review.user = current_user
+    @review.store = Store.find(params[:store_id])
+
     # check to see if review already exists
-    if Review.where(user_id: params[:review][:user], store_id: params[:review][:store]).exists?
-      
-      # redirect to the edit route
-      @review = Review.find_by(user_id: params[:review][:user], store_id: params[:review][:store])
-      redirect_to :action => "edit", :id => @review._id
-    else
+    if Review.is_unique
 
-      # Make a new review if it doesn't exist
-      @review = Review.new(params[:review].permit(:rating, :body))
-      @review.user = current_user
-      @review.store = Store.find(params[:store_id])
-
-      # Save review
       @review.save
 
       # Set the number of reviews a user has
@@ -46,7 +39,10 @@ class ReviewsController < ApplicationController
       store.update(avg_rating: rating_sum/store.reviews.count)
 
    	  redirect_to :action => "show", :id => @review._id
-     
+    else
+      # redirect to the edit route
+      @review = Review.find_by(user: params[:review][:user_id], store: params[:review][:store_id])
+      redirect_to :action => "edit", :id => @review._id    
     end
   end
 
