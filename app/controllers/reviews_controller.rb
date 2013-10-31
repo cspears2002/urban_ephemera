@@ -19,8 +19,13 @@ class ReviewsController < ApplicationController
     @review.store = Store.find(params[:store_id])
 
     # check to see if review already exists
-    if Review.where(user_id: '5272a64e43687203a0000000').exists?
-
+    # if Review.where(user: '5272a2c54368720387000000', store: '5272a2c54368720387010000').exists?
+    if Review.where(user: current_user, store: params[:store_id]).exists?
+      # redirect to the edit route
+      @review = Review.find_by(user: params[:review][:user_id], store: params[:review][:store_id])
+      redirect_to :action => "edit", :id => @review._id   
+      
+    else
       @review.save
 
       # Set the number of reviews a user has
@@ -38,11 +43,8 @@ class ReviewsController < ApplicationController
       end
       store.update(avg_rating: rating_sum/store.reviews.count)
 
-   	  redirect_to :action => "show", :id => @review._id
-    else
-      # redirect to the edit route
-      @review = Review.find_by(user: params[:review][:user_id], store: params[:review][:store_id])
-      redirect_to :action => "edit", :id => @review._id    
+      redirect_to :action => "show", :id => @review._id
+       
     end
   end
 
