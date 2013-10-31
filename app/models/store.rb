@@ -15,4 +15,8 @@ class Store
 
   has_many :reviews
 
+  def self.unique_name
+    where(name: name).exists?
+  end
+
 end

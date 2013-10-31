@@ -13,11 +13,7 @@ class StoresController < ApplicationController
   end
 
   def create
-    if Store.where(name: params[:store][:name]).exists?
-      @store = Store.find_by(name: params[:store][:name])
-      redirect_to :action => 'show', :id => @store._id
-    else
-      @store = Store.create(params[:store]
+    @store = Store.new(params[:store]
                               .permit(
                                 :name,
                                 :specialty,
@@ -29,7 +25,12 @@ class StoresController < ApplicationController
                                 :email,
                                 :website
                                 ))
+    if Store.unique_name
+      @store.save
       redirect_to :action => 'show', :id => @store._id
+    else
+      store = Store.find_by(name: params[:store][:name])
+      redirect_to :action => 'show', :id => store._id
     end
   end
 
