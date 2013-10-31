@@ -9,25 +9,30 @@ class StoresController < ApplicationController
   end
 
   def new
-  	@store = Store.new
+    @store = Store.new
   end
 
 
   def create
-  	@store = Store.new(params[:store]
-  				  .permit(:name, 
-                		:specialty, 
-                		:street, 
-                		:city, 
-                		:state, 
-                		:zip, 
-                		:phone_number, 
-                		:email, 
-                		:website))
-    if @store.save
-  	  redirect_to :action => "show", :id => @store._id
+    # Store.where(name: params[:store].permit(:name)).exists?
+    if Store.where(name: params[:store][:name]).exists?
+      @store = Store.find_by(name: params[:store][:name])
+      redirect_to :action => 'show', :id => @store._id
     else
-      redirect_to :action => "show", :id => Store.find_by(params[:name])
+      @store = Store.create(params[:store]
+                              .permit(
+                                :name,
+                                :specialty,
+                                :street,
+                                :city,
+                                :state,
+                                :zip,
+                                :phone_number,
+                                :email,
+                                :website
+                                ))
+      redirect_to :action => 'show', :id => @store._id
     end
   end
+
 end

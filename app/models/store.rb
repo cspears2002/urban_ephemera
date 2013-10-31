@@ -15,6 +15,4 @@ class Store
 
   has_many :reviews
 
-  # check if the name is unique
-  validates :name, uniqueness: true, :case_sensitive => false
 end
