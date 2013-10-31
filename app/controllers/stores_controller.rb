@@ -12,7 +12,6 @@ class StoresController < ApplicationController
     @store = Store.new
   end
 
-
   def create
     if Store.where(name: params[:store][:name]).exists?
       @store = Store.find_by(name: params[:store][:name])
