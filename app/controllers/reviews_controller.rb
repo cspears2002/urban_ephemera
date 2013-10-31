@@ -22,7 +22,7 @@ class ReviewsController < ApplicationController
     # if Review.where(user: '5272a2c54368720387000000', store: '5272a2c54368720387010000').exists?
     if Review.where(user: current_user, store: params[:store_id]).exists?
       # redirect to the edit route
-      @review = Review.find_by(user: params[:review][:user_id], store: params[:review][:store_id])
+      @review = Review.find_by(user: current_user, store: params[:store_id])
       redirect_to :action => "edit", :id => @review._id   
       
     else
