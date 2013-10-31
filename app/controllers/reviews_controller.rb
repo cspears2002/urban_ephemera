@@ -15,8 +15,8 @@ class ReviewsController < ApplicationController
   def create
 
     # check to see if review already exists
-    if Review.where(user: params[:review][:user], store: params[:review][:store]).exists?
-      @review = Review.find_by(user: params[:review][:user], store: params[:review][:store])
+    if Review.where(user: params[:review][:user], store_id: params[:review][:store]).exists?
+      @review = Review.find_by(user: params[:review][:user], store_id: params[:review][:store])
       
        # redirect to the edit route
       @review = Review.find_by(user: current_user)
