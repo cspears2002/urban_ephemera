@@ -19,7 +19,7 @@ class ReviewsController < ApplicationController
     @review.store = Store.find(params[:store_id])
 
     # check to see if review already exists
-    if Review.is_unique
+    if Review.where(user_id: '5272a64e43687203a0000000').exists?
 
       @review.save
 
