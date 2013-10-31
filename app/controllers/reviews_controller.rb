@@ -16,10 +16,9 @@ class ReviewsController < ApplicationController
 
     # check to see if review already exists
     if Review.where(user: params[:review][:user], store_id: params[:review][:store]).exists?
-      @review = Review.find_by(user: params[:review][:user], store_id: params[:review][:store])
       
-       # redirect to the edit route
-      @review = Review.find_by(user: current_user)
+      # redirect to the edit route
+      @review = Review.find_by(user: params[:review][:user], store_id: params[:review][:store])
       redirect_to :action => "edit", :id => @review._id
     else
 

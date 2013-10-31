@@ -14,7 +14,6 @@ class StoresController < ApplicationController
 
 
   def create
-    # Store.where(name: params[:store].permit(:name)).exists?
     if Store.where(name: params[:store][:name]).exists?
       @store = Store.find_by(name: params[:store][:name])
       redirect_to :action => 'show', :id => @store._id
