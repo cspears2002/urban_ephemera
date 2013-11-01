@@ -15,7 +15,7 @@
 </p>
 
 <p>
-	<%= button_to "Destroy Review", "/reviews/:id", method: :delete %>
+	<%= button_to "Destroy Review", store_review_path(@store, @review), method: :delete %>
 </p>
 
 <% end %>

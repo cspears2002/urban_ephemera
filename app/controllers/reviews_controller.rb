@@ -56,14 +56,13 @@ class ReviewsController < ApplicationController
   def update
     # Grab user's review
     @review = Review.find(params[:id])
-    # @review.update(params[:review].permit(:rating, :body))
+    
     # Update review
     if @review.update(params[:review].permit(:rating, :body))
       
       # Update the average rating for a store
       store = Store.find(params[:store_id])
       review_array = store.reviews.to_a
-      logger.info review_array
       rating_sum = 0.0
       review_array.each do |review|
          rating_sum = rating_sum + review.rating
