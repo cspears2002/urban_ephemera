@@ -14,6 +14,10 @@
 	<%= r.submit %>
 </p>
 
+<p>
+	<%= button_to "Destroy Review", "/reviews/:id", method: :delete %>
+</p>
+
 <% end %>
 
 review id: <%= @review._id %>

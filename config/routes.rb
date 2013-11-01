@@ -17,6 +17,7 @@ UrbanEphemera::Application.routes.draw do
   patch "reviews/:id" => "reviews#update", as: "review"
 
   delete "authentications/:id" => "authentications#destroy"
+  delete "reviews/:id" => "reviews#destroy"
 
   resources :stores do
     resources :reviews
