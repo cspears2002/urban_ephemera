@@ -56,7 +56,7 @@ class ReviewsController < ApplicationController
   def update
     # Grab user's review
     @review = Review.find(params[:id])
-    logger.info "Hello world" + params[:body]
+    logger.info "Hello world" + params[:rating]
     @review.update(rating: params[:rating], body: params[:body])
     # Update review
     # if @review.update(rating: params[:rating], body: params[:body])

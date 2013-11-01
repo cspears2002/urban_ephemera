@@ -25,12 +25,12 @@ class StoresController < ApplicationController
                                 :email,
                                 :website
                                 ))
-    if Store.unique_name
-      @store.save
-      redirect_to :action => 'show', :id => @store._id
-    else
+    if Store.where(name: params[:store][:name]).exists?
       store = Store.find_by(name: params[:store][:name])
       redirect_to :action => 'show', :id => store._id
+    else
+      @store.save
+      redirect_to :action => 'show', :id => @store._id      
     end
   end
 
