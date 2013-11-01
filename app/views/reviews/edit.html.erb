@@ -1,15 +1,15 @@
 <h1>Review already exists!  Update?</h1>
 
-<%= form_for [@store, @review] do |r| %>
+<%= form_for [@store, @review], {url:"/reviews", method:"update"} do |r| %>
 
 <p>
 	<%= r.label :rating, "Rating" %>
-	<%= r.text_field :rating,placeholder: 'placeholder' %>
+	<%= r.text_field :rating, placeholder: 'Rating' %>
 </p>
 
 <p>
 	<%= r.label :body, "Body" %>
-	<%= r.text_field :body %>
+	<%= r.text_field :body, placeholder: 'Review' %>
 </p>
 
 <p>

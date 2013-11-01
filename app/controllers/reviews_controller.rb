@@ -19,8 +19,8 @@ class ReviewsController < ApplicationController
     @review.store = Store.find(params[:store_id])
 
     # check to see if review already exists
-    # if Review.where(user: '5272a2c54368720387000000', store: '5272a2c54368720387010000').exists?
     if Review.where(user: current_user, store: params[:store_id]).exists?
+
       # redirect to the edit route
       @review = Review.find_by(user: current_user, store: params[:store_id])
       redirect_to :action => "edit", :id => @review._id   
@@ -53,11 +53,9 @@ class ReviewsController < ApplicationController
   end
 
   def update
-    # Grab user's review
-    @review = Review.find(params[:id])
 
-    # Try to update review
-    if @review.update_attributes!(params[:review].permit(:rating, :body))
+    # Update review
+    if @review.update(rating: params[:rating], body: params[:body])
       
       # Update the average rating for a store
       store = Store.find(params[:store_id])
@@ -70,8 +68,9 @@ class ReviewsController < ApplicationController
     
       redirect_to :action => "show", :id => @review._id
     else
-      render 'edit'
+      render :new
     end
+    
   end
 
 end

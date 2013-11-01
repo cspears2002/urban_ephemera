@@ -14,6 +14,7 @@ UrbanEphemera::Application.routes.draw do
 
   post "authentications" => "authentications#create"
   post "users" => "users#create"
+  post "reviews" => "reviews#update"
 
   delete "authentications/:id" => "authentications#destroy"
 
