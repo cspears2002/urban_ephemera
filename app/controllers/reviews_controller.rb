@@ -80,7 +80,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     @review.destroy
-    redirect_to users
+    redirect_to users_path
   end
 
 end
