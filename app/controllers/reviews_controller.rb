@@ -53,6 +53,8 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    # Grab user's review
+    @review = Review.find(params[:id])
 
     # Update review
     if @review.update(rating: params[:rating], body: params[:body])
